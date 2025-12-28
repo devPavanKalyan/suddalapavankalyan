@@ -1,150 +1,182 @@
+import { ArrowRight } from "lucide-react";
 import Container from "../../components/layout/Container";
 
 export default function Metafield() {
   return (
-    <section className="flex items-center bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <section className="py-20 bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
       <Container>
-        <div className="max-w-3xl py-24">
-          <span className="mb-8 inline-block rounded-full border border-slate-300 px-4 py-1 text-sm font-medium text-slate-600 dark:border-slate-700 dark:text-slate-300">
-            Case Study
-          </span>
+        <header className="w-full space-y-6">
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#background"
+              className="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 font-medium hover:bg-slate-100 dark:hover:bg-slate-900 active:scale-95 transition"
+            >
+              Background
+            </a>
+            <a
+              href="#design"
+              className="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 font-medium hover:bg-slate-100 dark:hover:bg-slate-900 active:scale-95 transition"
+            >
+              Design Philosophy
+            </a>
+            <a
+              href="#system"
+              className="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 font-medium hover:bg-slate-100 dark:hover:bg-slate-900 active:scale-95 transition"
+            >
+              System Overview
+            </a>
+            <a
+              href="#workflow"
+              className="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 font-medium hover:bg-slate-100 dark:hover:bg-slate-900 active:scale-95 transition"
+            >
+              Deployment Workflow
+            </a>
 
-          <h1 className="text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl">
-            Metafield – Salesforce Custom Object Deployment Tool
+            <a
+              href="#website"
+              className="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 font-medium hover:bg-slate-100 dark:hover:bg-slate-900 active:scale-95 transition"
+            >
+              Website
+            </a>
+          </div>
+          <h1 className="text-6xl font-bold tracking-tight leading-tight">
+            Metafield — Salesforce Custom Object Deployment Tool
           </h1>
-
-          <p className="mt-7 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-            Metafield is a narrowly scoped automation tool built to deploy
-            Salesforce Custom Object metadata with precision and safety. The
-            platform focuses on controlled deployments, explicit scope
-            definition, and operational clarity rather than broad, monolithic
-            metadata packaging.
+          <p className="max-w-4xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            A narrowly scoped automation tool for deploying Salesforce Custom
+            Object metadata with precision and operational clarity —
+            prioritizing explicit scope and repeatable, safe deployments.
           </p>
+        </header>
 
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            Background
-          </h2>
+        <main className="py-10 space-y-20">
+          <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "Precision Deployments",
+                desc: "Deploy only selected Custom Objects — no implicit metadata"
+              },
+              {
+                title: "Explicit Scope",
+                desc: "Controlled packaging ensures predictable deployment behavior"
+              },
+              {
+                title: "Traceability",
+                desc: "MongoDB tracks execution history and deployment metadata"
+              },
+              {
+                title: "Scalable Backend",
+                desc: "Stateless Node.js supports multi-org deployments"
+              }
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-slate-200 dark:border-slate-800 p-6"
+              >
+                <p className="font-semibold text-slate-900 dark:text-slate-100">
+                  {item.title}
+                </p>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </section>
 
-          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
-            In enterprise Salesforce environments, metadata deployments often
-            involve large packages containing multiple object types, profiles,
-            and permissions. These deployments increase the risk of unintended
-            changes and make it difficult to reason about what is actually being
-            modified.
-          </p>
+          <section id="architecture" className="space-y-4">
+            <h2 className="text-4xl font-semibold tracking-tight">
+              Architecture Overview
+            </h2>
 
-          <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
-            Teams frequently need to deploy only specific Custom Objects without
-            affecting unrelated metadata. Existing scripts and tools rarely
-            provide the level of precision, visibility, and repeatability
-            required for safe deployments.
-          </p>
+            <section className="grid gap-4 sm:grid-cols-3">
+              {[
+                { key: "Frontend", value: "React + TypeScript" },
+                { key: "Backend", value: "Node.JS + TypeScript" },
+                { key: "Database", value: "MongoDB" }
+              ].map((tech) => (
+                <div
+                  key={tech.key}
+                  className="rounded-2xl border border-slate-200 dark:border-slate-800 p-6"
+                >
+                  <p className="font-semibold">{tech.key}</p>
+                  <p className="text-sm mt-1 text-slate-500 dark:text-slate-400">
+                    {tech.value}
+                  </p>
+                </div>
+              ))}
+            </section>
+          </section>
 
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            Design Philosophy
-          </h2>
+          <section id="background" className="max-w-3xl space-y-4">
+            <h2 className="text-4xl font-semibold tracking-tight">
+              Background
+            </h2>
+            <p className="leading-relaxed text-slate-600 dark:text-slate-300">
+              Large enterprise deployments often modify multiple metadata types,
+              increasing risk and obscuring what is actually changing. Teams
+              frequently need precise Custom Object deployments without ripple
+              effects.
+            </p>
+          </section>
 
-          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
-            Metafield was designed with deliberate constraints. Rather than
-            supporting all metadata types, the tool focuses exclusively on
-            Custom Object deployments. This narrow scope enables stronger safety
-            guarantees and simplifies reasoning about deployment behavior.
-          </p>
+          <section id="design" className="max-w-3xl space-y-4">
+            <h2 className="text-4xl font-semibold tracking-tight">
+              Design Philosophy
+            </h2>
+            <p className="leading-relaxed text-slate-600 dark:text-slate-300">
+              Deliberate constraints enforce safety: only Custom Object metadata
+              is supported. Deployments remain explicit and predictable,
+              reducing operational risk and simplifying reasoning.
+            </p>
+          </section>
 
-          <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
-            Every deployment is explicit. Only selected objects are packaged,
-            and no implicit metadata inclusion is allowed. This approach reduces
-            operational risk and improves confidence during production
-            deployments.
-          </p>
+          <section id="system" className="max-w-3xl space-y-4">
+            <h2 className="text-4xl font-semibold tracking-tight">
+              System Overview
+            </h2>
+            <p className="leading-relaxed text-slate-600 dark:text-slate-300">
+              A React + TypeScript interface allows object selection. A Node.js
+              backend packages metadata via JForce and deploys to Salesforce,
+              while MongoDB preserves execution records.
+            </p>
+          </section>
 
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            System Overview
-          </h2>
+          <section id="workflow" className="max-w-3xl space-y-4">
+            <h2 className="text-4xl font-semibold tracking-tight">
+              Deployment Workflow
+            </h2>
+            <ul className="list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300">
+              <li>Select Custom Objects in the UI</li>
+              <li>Generate CustomObject XML + minimal package.xml</li>
+              <li>Package and deploy using Salesforce Metadata API</li>
+              <li>Persist job metadata for audit and traceability</li>
+            </ul>
+          </section>
 
-          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
-            The system consists of a React and TypeScript interface that allows
-            users to select Custom Objects for deployment. A Node.js backend
-            orchestrates packaging and deployment workflows, while JForce
-            provides authenticated access to the Salesforce Metadata API.
-          </p>
+          <section id="website" className="max-w-3xl space-y-4">
+            <h2 className="text-4xl font-semibold tracking-tight">Website</h2>
+            <a
+              href="https://metafie.vercel.app"
+              className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 px-6 py-3 font-medium text-white transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Metafield <ArrowRight size={18} />
+            </a>
+          </section>
 
-          <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
-            MongoDB persists deployment requests, execution status, and metadata
-            payloads, enabling traceability and historical auditing of changes.
-          </p>
-
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            Deployment Workflow
-          </h2>
-
-          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
-            Users initiate deployments by selecting Custom Objects through the
-            UI. The backend generates CustomObject XML definitions dynamically
-            and constructs a corresponding package.xml that includes only the
-            selected metadata.
-          </p>
-
-          <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
-            The metadata is packaged into a ZIP archive and deployed using the
-            Salesforce Metadata API. Each step is executed explicitly, ensuring
-            full visibility into what is being deployed.
-          </p>
-
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            Salesforce Integration
-          </h2>
-
-          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
-            JForce is used to manage Salesforce authentication and Metadata API
-            interactions. OAuth-based authentication secures access to
-            Salesforce orgs, while API calls are isolated from request-handling
-            logic to maintain clean separation of concerns.
-          </p>
-
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            Persistence and Traceability
-          </h2>
-
-          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
-            MongoDB stores deployment metadata, execution timestamps, and status
-            information. This enables teams to audit historical deployments,
-            track failures, and reason about changes across environments.
-          </p>
-
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            Safety and Scope Control
-          </h2>
-
-          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
-            Deployments are strictly limited to Custom Object metadata. Fields,
-            profiles, and permissions are excluded unless explicitly added in
-            future extensions. This constraint ensures that deployments remain
-            predictable and reduces the risk of accidental overwrites.
-          </p>
-
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            Scalability
-          </h2>
-
-          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
-            The Node.js backend is stateless and supports horizontal scaling.
-            The system is designed to handle deployments across multiple
-            Salesforce orgs, while remaining intentionally limited in scope to
-            preserve reliability and clarity.
-          </p>
-
-          <h2 className="mt-20 text-2xl font-semibold tracking-tight">
-            Closing Thoughts
-          </h2>
-
-          <p className="mt-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-            Metafield demonstrates how constrained tooling can be more effective
-            than generalized automation. By prioritizing precision, visibility,
-            and controlled scope, the platform delivers safer Salesforce
-            deployments while remaining simple to reason about and extend.
-          </p>
-        </div>
+          <section className="max-w-3xl space-y-4">
+            <h2 className="text-4xl font-semibold tracking-tight">
+              Closing Thoughts
+            </h2>
+            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+              Metafield demonstrates how focused tooling leads to safer
+              deployments: explicit metadata selection, clear operational
+              boundaries, and repeatable workflows reduce risk while remaining
+              extensible.
+            </p>
+          </section>
+        </main>
       </Container>
     </section>
   );

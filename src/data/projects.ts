@@ -10,36 +10,36 @@ export const projects = [
       "PostgreSQL",
       "MongoDB",
       "Elasticsearch",
-      "React",
+      "React"
     ],
     github: "https://github.com/devPavanKalyan?tab=repositories",
-    live: "https://shopverse-six.vercel.app",
+    live: "",
     demo: "#",
     href: "/project/shopverse",
-    isFlagship: true,
+    isFlagship: false
   },
   {
     title: "College Management System",
     description:
       "A role-based academic management system supporting students, faculty, librarians, and administrators with concurrency control and approval workflows.",
-    stack: ["Java", "Spring Boot", "MySQL"],
+    stack: ["Java", "Spring Boot", "MySQL", "Microservices", "React", "TypeScript", "PostgreSQL"],
     github: "https://github.com/devPavanKalyan?tab=repositories",
     live: "https://cmstech.vercel.app",
     demo: "#",
     href: "/project/college-management",
-    isFlagship: false,
+    isFlagship: false
   },
-  {
-    title: "Water Quality Monitoring System",
-    description:
-      "An IoT-driven system for monitoring and analyzing water quality, integrating sensor data pipelines and analytical services.",
-    stack: ["Java", "Spring Boot", "JWT", "MySQL"],
-    github: "https://github.com/devPavanKalyan?tab=repositories",
-    live: "",
-    demo: "#",
-    href: "/project/water-quality-monitoring",
-    isFlagship: false,
-  },
+//   {
+//     title: "Water Quality Monitoring System",
+//     description:
+//       "An IoT-driven system for monitoring and analyzing water quality, integrating sensor data pipelines and analytical services.",
+//     stack: ["Java", "Spring Boot", "JWT", "MySQL"],
+//     github: "https://github.com/devPavanKalyan?tab=repositories",
+//     live: "",
+//     demo: "#",
+//     href: "/project/water-quality-monitoring",
+//     isFlagship: false
+//   },
   {
     title: "Metabird – Salesforce Metadata Automation Platform",
     description:
@@ -53,13 +53,13 @@ export const projects = [
       "Salesforce Metadata API",
       "React",
       "TypeScript",
-      "Tailwind CSS",
+      "Tailwind CSS"
     ],
     github: "",
     live: "https://metabird.vercel.app",
     demo: "#",
     href: "/project/metabird",
-    isFlagship: false,
+    isFlagship: false
   },
   {
     title: "Metafield – Salesforce Custom Object Deployment Tool",
@@ -72,13 +72,13 @@ export const projects = [
       "MongoDB",
       "React",
       "TypeScript",
-      "Tailwind CSS",
+      "Tailwind CSS"
     ],
     github: "",
     live: "https://metafie.vercel.app",
     demo: "#",
     href: "/project/metafield",
-    isFlagship: false,
+    isFlagship: false
   },
   {
     title: "Do-It-Now – Task Management Platform",
@@ -90,7 +90,7 @@ export const projects = [
     demo: "#",
 
     href: "/project/microsoft-to-do-clone",
-    isFlagship: false,
+    isFlagship: false
   },
   {
     title: "AquaSense – IoT Water Quality Monitoring Platform",
@@ -102,14 +102,14 @@ export const projects = [
       "JWT",
       "Kafka",
       "MySQL",
-      "IoT",
+      "IoT"
     ],
     github: "https://github.com/devPavanKalyan?tab=repositories",
     live: "https://watech.vercel.app",
     demo: "#",
     href: "/project/aquasense",
-    isFlagship: false,
-  },
+    isFlagship: false
+  }
   //   {
   //     title: "ShopVerse – eCommerce Backend Platform",
   //     description:

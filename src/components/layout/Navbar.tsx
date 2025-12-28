@@ -1,85 +1,93 @@
-import { useState } from "react";
-import Container from "./Container";
+import { AlignLeft, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const toggle = () => setOpen((p) => !p);
 
-  return (
-    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white backdrop-blur dark:border-slate-800 dark:bg-slate-950">
-      <Container>
-        <div className="flex h-16 items-center justify-between">
-          <span className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-            Suddala Pavan Kalyan
-          </span>
+  const navItems = [
+    { label: "About", link: "#about" },
+    { label: "Skills", link: "#skills" },
+    { label: "Projects", link: "#projects" },
+    { label: "Links", link: "#links" }
+  ];
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden inline-flex items-center justify-center rounded-lg border border-slate-300 p-2 text-slate-700 dark:border-slate-700 dark:text-slate-200"
-            aria-label="Toggle navigation"
-          >
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+  useEffect(() => {
+    if (open) document.body.classList.add("overflow-hidden");
+    else document.body.classList.remove("overflow-hidden");
+  }, [open]);
 
-          <div className="hidden md:flex items-center gap-8 text-sm text-slate-600 dark:text-slate-300">
-            <NavLinks />
-          </div>
-        </div>
-
-        {open && (
-          <div className="md:hidden border-t border-slate-200 py-4 dark:border-slate-800">
-            <div className="flex flex-col gap-4 text-sm text-slate-600 dark:text-slate-300">
-              <NavLinks onClick={() => setOpen(false)} />
-            </div>
-          </div>
-        )}
-      </Container>
-    </nav>
-  );
-}
-
-function NavLinks({ onClick }: { onClick?: () => void }) {
   return (
     <>
-      <a
-        href="#about"
-        onClick={onClick}
-        className="transition hover:text-indigo-600 dark:hover:text-indigo-400"
+      <header className="sticky top-0 z-50 w-full px-5 md:px-30 py-4 md:py-6 backdrop-blur-md border-b bg-white dark:bg-slate-950/95 border-slate-200/60 dark:border-slate-800/60 transition-colors duration-300">
+        <div className="flex items-center justify-between md:hidden">
+          <button
+            onClick={toggle}
+            className="p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/50 active:scale-95 transition"
+          >
+            <AlignLeft size={26} />
+          </button>
+          <span className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+            Suddala <span className="text-indigo-700">Pavan Kalyan</span>.
+          </span>
+        </div>
+
+        <div className="hidden md:flex items-center justify-between">
+          <span className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+            Suddala <span className="text-indigo-700">Pavan Kalyan</span>.
+          </span>
+          <nav>
+            <ul className="flex items-center gap-10">
+              {navItems.map((item) => (
+                <li
+                  key={item.label}
+                  className="relative text-[15px] font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+                >
+                  <a href={item.link}>{item.label}</a>
+                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-indigo-500 dark:bg-indigo-400 rounded-full transition-all duration-300 group-hover:w-full" />
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div
+        className={`fixed inset-0 z-50 flex flex-col bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-transform duration-300 md:hidden ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
-        About
-      </a>
-      <a
-        href="#skills"
-        onClick={onClick}
-        className="transition hover:text-indigo-600 dark:hover:text-indigo-400"
-      >
-        Skills
-      </a>
-      <a
-        href="#projects"
-        onClick={onClick}
-        className="transition hover:text-indigo-600 dark:hover:text-indigo-400"
-      >
-        Projects
-      </a>
-      <a
-        href="#links"
-        onClick={onClick}
-        className="transition hover:text-indigo-600 dark:hover:text-indigo-400"
-      >
-        Links
-      </a>
+        <header className="flex items-center justify-between px-6 py-5 border-b border-slate-200 dark:border-slate-800">
+          <span className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+            Suddala <span className="text-indigo-700">Pavan Kalyan</span>.
+          </span>
+          <button
+            onClick={toggle}
+            className="p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/50 active:scale-95 transition"
+          >
+            <X size={32} />
+          </button>
+        </header>
+
+        <nav className="flex-1 px-6 py-8 overflow-y-auto">
+          <ul className="space-y-6">
+            {navItems.map((item) => (
+              <li
+                key={item.label}
+                className="text-xl font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+              >
+                <a href={item.link} onClick={toggle}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <footer className="px-6 py-6 text-xs text-slate-500 dark:text-slate-400">
+          © {new Date().getFullYear()} Pavan Kalyan. All rights reserved.
+        </footer>
+      </div>
     </>
   );
 }
