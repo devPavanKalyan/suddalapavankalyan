@@ -22,24 +22,32 @@ export const projects = [
     title: "College Management System",
     description:
       "A role-based academic management system supporting students, faculty, librarians, and administrators with concurrency control and approval workflows.",
-    stack: ["Java", "Spring Boot", "MySQL", "Microservices", "React", "TypeScript", "PostgreSQL"],
+    stack: [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "Microservices",
+      "React",
+      "TypeScript",
+      "PostgreSQL"
+    ],
     github: "https://github.com/devPavanKalyan?tab=repositories",
     live: "https://cmstech.vercel.app",
     demo: "#",
     href: "/project/college-management",
     isFlagship: false
   },
-//   {
-//     title: "Water Quality Monitoring System",
-//     description:
-//       "An IoT-driven system for monitoring and analyzing water quality, integrating sensor data pipelines and analytical services.",
-//     stack: ["Java", "Spring Boot", "JWT", "MySQL"],
-//     github: "https://github.com/devPavanKalyan?tab=repositories",
-//     live: "",
-//     demo: "#",
-//     href: "/project/water-quality-monitoring",
-//     isFlagship: false
-//   },
+  //   {
+  //     title: "Water Quality Monitoring System",
+  //     description:
+  //       "An IoT-driven system for monitoring and analyzing water quality, integrating sensor data pipelines and analytical services.",
+  //     stack: ["Java", "Spring Boot", "JWT", "MySQL"],
+  //     github: "https://github.com/devPavanKalyan?tab=repositories",
+  //     live: "",
+  //     demo: "#",
+  //     href: "/project/water-quality-monitoring",
+  //     isFlagship: false
+  //   },
   {
     title: "Metabird – Salesforce Metadata Automation Platform",
     description:

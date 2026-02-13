@@ -4,13 +4,22 @@ export const skills = {
     "Python",
     "Spring Boot",
     "Microservices Architecture",
-    "REST APIs",
-    "WebSocket",
-    "Server-Sent Events",
-    "Kafka",
-    "Redis",
+    "REST APIs"
+    // "WebSocket",
+    // "Server-Sent Events",
+    // "Kafka",
+    // "Redis"
   ],
-  databases: ["PostgreSQL", "MongoDB", "Elasticsearch", "MySQL"],
-  cloud: ["Docker", "Kubernetes"],
-  frontend: ["React", "TypeScript", "JavaScript", "Redux", "Tailwind CSS"],
+  databases: ["MySQL", "MongoDB (basics)"],
+  //   "PostgreSQL", "MongoDB", "Elasticsearch",
+  //   cloud: ["Docker (basics)", "Kubernetes (basics)", "AWS (basics)"],
+  "systems & version control": ["Linux", "Git"],
+
+  frontend: ["React", "TypeScript", "HTML", "CSS"],
+  "data science & machine learning": [
+    "Pandas",
+    "Numpy",
+    "Advance Statistics",
+    "Scikit-learn"
+  ]
 };

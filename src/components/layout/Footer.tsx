@@ -8,33 +8,22 @@ export default function Footer() {
       className="
         py-14
         border-t
-        border-slate-300 bg-white
-        dark:border-slate-700 dark:bg-slate-950
-        dark:shadow-[0_-2px_12px_rgba(0,0,0,0.35)]
+        border-slate-300
+        bg-white
       "
     >
       <Container>
         <div className="pb-14 grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <h2
-              className="
-                text-2xl font-bold tracking-tight
-                text-slate-900 dark:text-slate-100
-              "
-            >
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
               Suddala Pavan Kalyan
             </h2>
 
-            <p className="mt-2 text-base font-medium text-slate-700 dark:text-slate-300">
+            <p className="mt-2 text-base font-medium text-slate-700">
               Java Backend & Full-Stack Engineer
             </p>
 
-            <p
-              className="
-                mt-5 max-w-md text-sm leading-relaxed
-                text-slate-600 dark:text-slate-400
-              "
-            >
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-slate-600">
               Crafting scalable, fault-tolerant backend systems with a focus on
               performance, reliability, and clean architecture.
             </p>
@@ -42,11 +31,10 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3 text-sm md:items-end font-medium">
             <a
-              href="mailto:suddalapavankalyan.sp@gmail.com"
+              href="mailto:suddalapavankalyan.ps@gmail.com"
               className="
                 flex items-center gap-2
                 text-slate-700 hover:text-indigo-600
-                dark:text-slate-300 dark:hover:text-indigo-400
                 transition-colors
               "
             >
@@ -60,13 +48,24 @@ export default function Footer() {
               className="
                 flex items-center gap-2
                 text-slate-700 hover:text-indigo-600
-                dark:text-slate-300 dark:hover:text-indigo-400
                 transition-colors
               "
             >
               <Linkedin size={18} /> LinkedIn
             </a>
-
+            <a
+              href="https://github.com/pavankalyan-verse"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="
+                flex items-center gap-2
+                text-slate-700 hover:text-indigo-600
+                transition-colors
+              "
+            >
+              <Github size={18} />
+              GitHub - Production Projects
+            </a>
             <a
               href="https://github.com/devPavanKalyan"
               rel="noopener noreferrer"
@@ -74,23 +73,30 @@ export default function Footer() {
               className="
                 flex items-center gap-2
                 text-slate-700 hover:text-indigo-600
-                dark:text-slate-300 dark:hover:text-indigo-400
                 transition-colors
               "
             >
-              <Github size={18} /> GitHub
+              <Github size={18} />
+              GitHub - R&D / Experiments / Legacy / Older projects
+            </a>
+
+            <a
+              href="https://github.com/suddalapavankalyan"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="
+                flex items-center gap-2
+                text-slate-700 hover:text-indigo-600
+                transition-colors
+              "
+            >
+              <Github size={18} /> GitHub - AI/ML beginner projects (learning &
+              experimenting)
             </a>
           </div>
         </div>
 
-        <div
-          className="
-            border-t border-slate-300 dark:border-slate-700
-            pt-6 mt-8
-            flex justify-between text-xs font-medium
-            text-slate-600 dark:text-slate-400
-          "
-        >
+        <div className="border-t border-slate-300 pt-6 mt-8 flex justify-between text-xs font-medium text-slate-600">
           <p>© {new Date().getFullYear()} Pavan Kalyan. All rights reserved.</p>
         </div>
       </Container>

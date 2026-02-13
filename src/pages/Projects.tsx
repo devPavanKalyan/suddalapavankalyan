@@ -6,36 +6,20 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="
-        py-20
-        bg-white
-        text-slate-900
-        dark:bg-slate-950 dark:text-slate-100
-      "
-    >
+    <section id="projects" className="py-20 bg-white text-slate-900">
       <Container>
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.15 }}
-          className="mb-8 inline-block rounded-full border border-slate-300 px-5 py-1.5 text-sm font-medium text-slate-700 backdrop-blur-sm dark:border-slate-700 dark:text-slate-300"
+          className="mb-8 inline-block rounded-full border border-slate-300 px-5 py-1.5 text-sm font-medium text-slate-700 backdrop-blur-sm"
         >
           My Projects
         </motion.span>
+
         <SectionTitle title="Projects" />
 
-        <p
-          className="
-            mb-20
-            max-w-3xl
-            text-lg
-            leading-relaxed
-            text-slate-600
-            dark:text-slate-400
-          "
-        >
+        <p className="mb-20 max-w-3xl text-lg leading-relaxed text-slate-600">
           A collection of projects shaped by real backend challenges —
           distributed systems, scalability, and production-ready design. Every
           build shows the trade-offs that actually matter in the real world, the
@@ -64,9 +48,6 @@ export default function Projects() {
                   transition-all duration-300
                   hover:shadow-xl hover:-translate-y-1
                   hover:border-indigo-500/50
-                  dark:bg-slate-900
-                  dark:border-slate-800
-                  dark:hover:border-indigo-400/70
                 "
               >
                 {project.isFlagship && (
@@ -76,7 +57,6 @@ export default function Projects() {
                       right-6 top-6
                       rounded-full
                       bg-indigo-600 text-white
-                      dark:bg-indigo-500 dark:text-black
                       px-3 py-1 text-xs font-semibold
                     "
                   >
@@ -84,26 +64,11 @@ export default function Projects() {
                   </span>
                 )}
 
-                <h3
-                  className="
-                    text-2xl
-                    font-semibold
-                    tracking-tight
-                    text-slate-900
-                    dark:text-slate-100
-                  "
-                >
+                <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
                   {project.title}
                 </h3>
 
-                <p
-                  className="
-                    mt-4
-                    leading-relaxed
-                    text-slate-600
-                    dark:text-slate-400
-                  "
-                >
+                <p className="mt-4 leading-relaxed text-slate-600">
                   {project.description}
                 </p>
 
@@ -121,13 +86,7 @@ export default function Projects() {
                         shadow-sm
                         transition
                         hover:bg-indigo-600 hover:text-white hover:border-indigo-600
-
-                        dark:bg-slate-800/70
-                        dark:text-slate-300
-                        dark:border-none
-                        dark:shadow-sm
-                        dark:hover:bg-indigo-500 dark:hover:text-black
-                    "
+                      "
                     >
                       {tech}
                     </span>
@@ -135,23 +94,13 @@ export default function Projects() {
                 </div>
 
                 {(project.live || project.href || project.github) && (
-                  <div
-                    className="
-                      mt-8
-                      flex items-center gap-8
-                      text-sm font-medium
-                    "
-                  >
+                  <div className="mt-8 flex items-center gap-8 text-sm font-medium">
                     {project.live && (
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noreferrer"
-                        className="
-                          text-indigo-600 transition-colors
-                          hover:text-indigo-700
-                          dark:text-indigo-400 dark:hover:text-indigo-300
-                        "
+                        className="text-indigo-600 transition-colors hover:text-indigo-700"
                       >
                         Website
                       </a>
@@ -159,11 +108,7 @@ export default function Projects() {
                     {project.href && (
                       <a
                         href={project.href}
-                        className="
-                          text-indigo-600 transition-colors
-                          hover:text-indigo-700
-                          dark:text-indigo-400 dark:hover:text-indigo-300
-                        "
+                        className="text-indigo-600 transition-colors hover:text-indigo-700"
                       >
                         Case Study
                       </a>
@@ -173,11 +118,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="
-                          text-indigo-600 transition-colors
-                          hover:text-indigo-700
-                          dark:text-indigo-400 dark:hover:text-indigo-300
-                        "
+                        className="text-indigo-600 transition-colors hover:text-indigo-700"
                       >
                         GitHub
                       </a>
